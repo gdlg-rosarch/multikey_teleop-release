@@ -1,0 +1,13 @@
+Source: ros-kinetic-multikey-teleop
+Section: misc
+Priority: extra
+Maintainer: Easymov Robotics <dev@easymov.fr>
+Build-Depends: debhelper (>= 9.0.0), ros-kinetic-catkin, ros-kinetic-rostest
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-kinetic-multikey-teleop
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, python-xlib, ros-kinetic-geometry-msgs, ros-kinetic-rospy, ros-kinetic-std-msgs
+Description: multikey_teleop is a node for robot teleoperation.
+ It uses keyboard to produce *Twist* messages. It's basically a keylogger, listening on any key press and producing commands accordingly. Its main advantage is that you will be able to simultaneously press multiple keys. Its main advantage is that you will be able to simultaneously press multiple keys.
