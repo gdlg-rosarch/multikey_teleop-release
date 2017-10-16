@@ -1,0 +1,7 @@
+forward: [w, up]
+backward: [s, down]
+left: [a, left]
+right: [d, right]
+brake: [space]
+pause: [escape]
+fast: [shift_l]

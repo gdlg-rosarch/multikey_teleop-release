@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<launch>
+
+    <include file="$(find multikey_teleop)/launch/teleop.launch">
+        <arg name="topic" value="turtle1/cmd_vel"/>
+        <arg name="publish_null" default="true"/>
+    </include>
+
+    <node name="turtlesim" pkg="turtlesim" type="turtlesim_node"/>
+
+</launch>

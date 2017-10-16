@@ -1,0 +1,16 @@
+<launch>
+
+    <include file="$(find multikey_teleop)/launch/teleop.launch">
+        <arg name="topic" value="cmd_vel"/>
+        <arg name="publish_null" default="true"/>
+        <arg name="rate" default="10.0"/>
+    </include>
+
+    <test test-name="hztest_test" pkg="rostest" type="hztest" name="hztest">
+        <param name="topic" value="cmd_vel"/>
+        <param name="hz" value="10.0"/>
+        <param name="hzerror" value="0.5"/>
+        <param name="test_duration" value="5.0"/>
+    </test>
+
+</launch>

@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<launch>
+
+    <arg name="topic" default="cmd_vel"/>
+    <arg name="linear_speed" default="1.0"/>
+    <arg name="angular_speed" default="1.0"/>
+    <arg name="speed_factor" default="1.5"/>
+    <arg name="rate" default="10.0"/>
+    <arg name="publish_null" default="false"/>
+    <arg name="should_hide_inputs" default="true"/>
+    <arg name="language" default="en"/>
+    <arg name="key_map" default="$(find multikey_teleop)/config/$(arg language).yaml"/>
+
+    <node pkg="multikey_teleop" type="multikey_teleop" name="multikey_teleop">
+        <param name="linear_speed" value="$(arg linear_speed)"/>
+        <param name="angular_speed" value="$(arg angular_speed)"/>
+        <param name="speed_factor" value="$(arg speed_factor)"/>
+        <param name="rate" value="$(arg rate)"/>
+        <param name="publish_null" value="$(arg publish_null)"/>
+        <param name="should_hide_inputs" value="$(arg should_hide_inputs)"/>
+        <rosparam param="key_map" file="$(arg key_map)"/>
+        <remap from="cmd_vel" to="$(arg topic)"/>
+    </node>
+
+</launch>
